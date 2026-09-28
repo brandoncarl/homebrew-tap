@@ -1,0 +1,31 @@
+class Larp < Formula
+  desc "Local action runner with 1Password-backed secrets"
+  homepage "https://github.com/brandoncarl/larp"
+  url "https://github.com/brandoncarl/larp/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "666ab2a4ede7abca2818282641e63aab1731bcbdceea9be16f7c59d90b1fbd96"
+  license "MIT"
+
+  depends_on "rust" => :build
+  depends_on :macos
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
+    system "sh", "scripts/build-release.sh", "--locked", "--offline"
+    bin.install "target/release/larp"
+    doc.install "README.md", "QUICKSTART.md", "LICENSE"
+  end
+
+  def caveats
+    <<~EOS
+      Install the 1Password CLI and enable 1Password MCP before running LARP.
+      Run `larp admin` to configure it, then `larp start` in a separate terminal.
+    EOS
+  end
+
+  test do
+    assert_match "larp admin", shell_output("#{bin}/larp help")
+  end
+end
