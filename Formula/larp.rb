@@ -7,13 +7,13 @@ class Larp < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/brandoncarl/larp/releases/download/v0.1.5/larp-v0.1.5-darwin-arm64.tar.gz"
-      sha256 "751e25dc55da4a6e66fed4dc0533e00a3d23c9f647b5f83b6f53ea0dac659af8"
+      url "https://github.com/brandoncarl/larp/releases/download/v0.1.6/larp-v0.1.6-darwin-arm64.tar.gz"
+      sha256 "327023d0ca5d649eade6c26a524cf7141ee4edfefafae81d3aad7da9050bbf6b"
     end
 
     on_intel do
-      url "https://github.com/brandoncarl/larp/releases/download/v0.1.5/larp-v0.1.5-darwin-x86_64.tar.gz"
-      sha256 "5ba922de83c688fbe154eab41bbf8e111896ffbdd5ecf356130874a0036cab77"
+      url "https://github.com/brandoncarl/larp/releases/download/v0.1.6/larp-v0.1.6-darwin-x86_64.tar.gz"
+      sha256 "5be90f2f9d25ca04771b3f62ef73811c8bd78de35a6b131703322f221df5cef4"
     end
   end
 
